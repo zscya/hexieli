@@ -1,0 +1,69 @@
+<!--pages/manager/manager.wxml-->
+<view class="mainbox">
+    <block wx:if="{{tabs[0].isActive}}">
+        <view style="z-index: 60;" class="orderContainer">
+            <view class="toplogo">
+                <view class="placename">
+                    placename
+                </view>
+            </view>
+            <view class="topclassify" bindtap="toorderlist">
+                <view class="tool_item">
+                    <view class="iconfont icon-dingdan"></view>
+                    <view>待取单</view>
+                </view>
+                <view class="tool_item">
+                    <view class="iconfont icon-paihangbang"></view>
+                    <view>全部</view>
+                </view>
+            </view>
+            <view class="middlecard">
+                <view class="topsearchcard">
+                    <view class="floortitle">
+                        取餐订单
+                    </view>
+                </view>
+                <view class="searchcard">
+                    <Searchinput></Searchinput>
+                </view>
+            </view>
+        </view>
+        <view class="orderlist">
+            <view wx:for="{{shoppinglist}}" wx:key="_id">
+                <view class="orderitem">
+                    <view class="order_name_wrap">
+                        <view class="order_name">
+                            {{item.shoppingname}}
+                        </view>
+                        <view class="order_type">
+                            待取餐
+                        </view>
+                    </view>
+                    <view class="order_price_wrap">
+                        <view class="position_wrap">
+                            <view class="num">
+                                X{{item.num}}
+                            </view>
+                            <view class="plice">
+                                <!-- {{item.place}} -->
+                                <!-- <block>--</block> -->
+                                {{item.time}}
+                            </view>
+                        </view>
+                        <view class="price">
+                            ￥{{item.price}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:elif="{{tabs[1].isActive}}">
+        2
+    </block>
+    <block wx:elif="{{tabs[2].isActive}}">
+        3
+    </block>
+</view>
+<IconTabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+</IconTabs>

@@ -1,0 +1,165 @@
+<!--index.wxml-->
+<view class="hxl-index">
+  <!-- 轮播图开始 -->
+  <view class="index_swiper">
+    <!-- 
+    1.swiper标签中存在默认的宽度和高度
+   -->
+    <swiper class="banners" indicator-color="ivory" indicator-active-color="#d43c33" indicator-dots="true" autoplay="true">
+      <swiper-item wx:for="{{swiperList}}" wx:key="id">
+        <image src="{{item.pic}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 轮播图结束 -->
+  <!-- 楼层开始 -->
+  <view class="index_floor">
+    <!-- 公告开始 -->
+    <view class="floor_group">
+      <!-- 标题 -->
+      <view class="floor_group_top">
+        <view class="floor_title">
+          公告
+        </view>
+        <navigator url="/pages/moreinfo/moreinfo">
+          <view class="floor_more">
+            查看更多>
+          </view>
+        </navigator>
+      </view>
+      <!-- 内容 -->
+      <view class="floor_list" wx:for="{{gonggao_list}}" wx:key="_id" wx:for-item="item">
+        <view class="floor_list_info">
+          {{item.gonggao_title}}
+        </view>
+      </view>
+    </view>
+    <!-- 公告结束 -->
+    <!--社区互助开始 -->
+    <view class="floor_group">
+      <!-- 标题 -->
+      <view class="floor_group_top">
+        <view class="floor_title">
+          社区互助
+        </view>
+        <view bindtap="tohelp">
+          <view class="floor_more">
+            查看更多>
+          </view>
+        </view>
+      </view>
+      <!-- 内容 -->
+      <view class="first_tab">
+        <view wx:for="{{help_list}}" wx:key="id" wx:for-index="index1" wx:for-item="item1">
+          <view class="goods_list">
+            <view class="goods_item">
+              <!-- 左侧的图片容器结构 -->
+              <view class="goods_img_wrap">
+                <image  src="{{item1.images[0]?item1.images[0]:'../../static/images/use/nopng.png'}}"></image>
+              </view>
+              <!-- 右侧 商品容器 -->
+              <view class="goods_info_wrap">
+                <view class="goods_name">{{item1.things_name}}</view>
+                <view class="goods_position">
+                  地点：{{item1.Place}}
+                </view>
+                <view class="goods_price_wrap">
+                  <view class="goods_price iconfont icon-flower">
+                    {{item1.bloom}}
+                  </view>
+                  <view class="goods_yuding" bindtap="tohelp">
+                    帮助
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--社区互助结束 -->
+    <!--社区互惠开始 -->
+    <view class="floor_group">
+      <!-- 标题 -->
+      <view class="floor_group_top">
+        <view class="floor_title">
+          社区互惠
+        </view>
+        <view bindtap="toshopping">
+          <view class="floor_more">
+            查看更多>
+          </view>
+        </view>
+      </view>
+      <!-- 内容 -->
+      <view class="first_tab">
+        <view wx:for="{{goods_list}}" wx:key="id" wx:for-index="index1" wx:for-item="item1">
+          <view class="goods_list">
+            <view class="goods_item">
+              <!-- 左侧的图片容器结构 -->
+              <view class="goods_img_wrap">
+                <image  src="{{item1.images[0]?item1.images[0]:'../../static/images/use/nopng.png'}}"></image>
+              </view>
+              <!-- 右侧 商品容器 -->
+              <view class="goods_info_wrap">
+                <view class="goods_name">{{item1.titlename}}</view>
+                <view class="goods_position">
+                  地点：{{item1.Place}}
+                </view>
+                <view class="goods_price_wrap">
+                  <view class="goods_price iconfont icon-qian">
+                    {{item1.bloom}}
+                  </view>
+                  <view class="goods_yuding" bindtap="toshopping">
+                    联系
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--社区互惠结束 -->
+    <!--本周互助之最开始-->
+    <view class="floor_group">
+      <!-- 标题 -->
+      <view class="floor_group_top">
+        <view class="floor_title">
+          本周互助之最
+        </view>
+      </view>
+      <!-- 内容 -->
+      <view class="picture">
+        <image src="../../static/images/best/本周之最.png"/>
+      </view>
+    </view>
+    <!--本周互助之最结束-->
+    <!-- 你知道吗开始 -->
+    <view class="floor_group">
+      <!-- 标题 -->
+      <view class="floor_group_top">
+        <view class="floor_title">
+          你知道吗?
+        </view>
+      </view>
+      <!-- 内容 -->
+      <view class="picture">
+        <image src="../../static/images/youknow/十四届全国人大一次会议.jpg" mode=""/>
+        <view class="floor_group_top">
+          <view class="text_title">
+            两会在身边
+          </view>
+          <navigator url="/pages/moreinfo/moreinfo">
+            <view class="floor_more">
+              查看更多>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <!-- 你知道吗结束 -->
+
+  </view>
+  <!-- 楼层结束 -->
+</view>

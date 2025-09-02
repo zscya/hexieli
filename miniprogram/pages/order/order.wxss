@@ -1,0 +1,96 @@
+/* pages/order/order.wxss */
+.first_tab {
+  position: relative;
+  right: 25rpx;
+  top: 20rpx;
+}
+.first_tab .goods_item {
+  display: flex;
+  border-bottom: 1rpx solid #cccccc;
+}
+.first_tab .goods_item .goods_img_wrap {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250rpx;
+  height: 200rpx;
+}
+.first_tab .goods_item .goods_img_wrap image {
+  width: 80%;
+  height: 80%;
+}
+.first_tab .goods_item .goods_info_wrap {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.first_tab .goods_item .goods_info_wrap .goods_price_wrap {
+  color: var(--themeColor);
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.first_tab .goods_item .goods_info_wrap .goods_price_wrap .goods_yuding {
+  border-radius: 15rpx;
+  border: 2rpx solid #eeeeee;
+  color: #C7C7C7;
+  background: #999999;
+  font-size: 35rpx;
+}
+.first_tab .goods_item .goods_info_wrap .goods_price_wrap .goods_price {
+  /* border-radius: 15rpx; */
+  /* border: 2rpx solid #eeeeee; */
+  color: #C7C7C7;
+  /* background: #999999; */
+  font-size: 35rpx;
+}
+.first_tab .goods_item .goods_info_wrap .goods_price_wrap .goods_wancheng {
+  border-radius: 15rpx;
+  border: 2rpx solid blueviolet;
+  color: blue;
+}
+.first_tab .goods_item .goods_info_wrap .goods_name_wrap {
+  color: var(--themeColor);
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.first_tab .goods_item .goods_info_wrap .goods_name_wrap .goods_type {
+  border-radius: 15rpx;
+  border: 2rpx solid #eeeeee;
+  color: white;
+  background: #999999;
+  font-size: 35rpx;
+}
+.first_tab .goods_item .goods_info_wrap .goods_name_wrap .goods_name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 35rpx;
+}
+.first_tab .goods_item .goods_info_wrap .goods_position {
+  font-size: 25rpx;
+}
+.publish_help_wrap {
+  position: fixed;
+  width: 80rpx;
+  height: 60rpx;
+  bottom: 90rpx;
+  right: 10px;
+  font-size: 24rpx;
+}
+.publish_help_wrap .publish_help_main {
+  display: flex;
+  border-radius: 50%;
+  border: 5rpx solid #eeeeee;
+  background: yellow;
+  width: 70rpx;
+  height: 70rpx;
+  justify-content: center;
+  align-items: center;
+}

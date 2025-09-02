@@ -1,0 +1,72 @@
+<!--pages/help/help.wxml-->
+<!-- 搜索框开始 -->
+<view class="cates">
+    <view class="cates_container">
+        <!-- 左侧菜单 -->
+        <!-- <scroll-view class="left_menu" scroll-y="true">
+            <view
+            class="menu_item  {{index ===currentIndex?'active':''}}"
+            wx:for="{{leftMenuList}}"
+            wx:key="*this"
+            bindtap="handleItemTap"
+            data-index="{{index}}"
+            >
+            {{item}}
+            </view>
+        </scroll-view> -->
+        <!-- 右侧商品内容 -->
+        <!-- <scroll-view class="right_content" scroll-top="{{scrollTop}}" scroll-y="true" >
+            <view class="goods_group"
+            wx:for="{{rightContent}}"
+            wx:for-index="index1"
+            wx:for-item="item1"
+            wx:key="id"
+            >
+                <view class="goods_title">
+                    <text class="delimiter">/</text>
+                    <text class="title">{{item1.cat_name}}</text>
+                    <text class="delimiter">/</text>
+                </view>
+                <view class="goods_list">
+                    <navigator
+                    wx:for="{{item1.children}}"
+                    wx:for-index="index2"
+                    wx:for-item="item2"
+                    wx:key="cat_id"
+                    url="/pages/goods-list/goods-list?cid={{item2.cat_id}}"
+                    >
+                    <image mode="widthFix" src="{{item2.cat_icon}}"></image>
+                    <view class="goods_name">{{item2.cat_name}}</view>
+                    </navigator>
+                </view>
+            </view>
+        </scroll-view> -->
+        <view class="first_tab">
+            <view wx:for="{{mainContent}}" wx:key="id" wx:for-index="index1" wx:for-item="item1">
+                <view class="goods_list">
+                    <view class="goods_item" bindtap="moreDetail" data-id="{{item1._id}}">
+                        <!-- 左侧的图片容器结构 -->
+                        <view class="goods_img_wrap">
+                            <image src="{{item1.images[0]?item1.images[0]:'../../static/images/use/nopng.png'}}"></image>
+                        </view>
+                        <!-- 右侧 商品容器 -->
+                        <view class="goods_info_wrap">
+                            <view class="goods_name">{{item1.titlename}}</view>
+                            <view class="goods_position">
+                                地点：{{item1.Place}}
+                            </view>
+                            <view class="goods_price_wrap">
+                                <view class="goods_price iconfont icon-qian">
+                                    {{item1.bloom}}
+                                </view>
+                                <view class="goods_yuding">
+                                    联系
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

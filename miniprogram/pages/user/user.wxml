@@ -1,0 +1,51 @@
+<!--pages/mine/mine.wxml-->
+<view class="user_info_wrap">
+    <view wx:if="{{userinfo.avatarUrl}}" class="user_img_wrap">
+        <image class="user_bg" src="{{userinfo.avatarUrl}}"></image>
+        <view class="user_info">
+            <image class="user_icon" src="{{userinfo.avatarUrl}}"></image>
+            <view class="user_name">{{userinfo.nickName}}</view>
+        </view>
+    </view>
+    <view wx:else class="user_btn">
+        <navigator url="/pages/login/login">登录</navigator>
+    </view>
+</view>
+<view class="user_content">
+    <view class="user_main">
+        <!-- 历史足迹 -->
+        <view class="history_wrap">
+            <navigator url="/pages/order/order">
+                <view class="his_name">互惠信息</view>
+            </navigator>
+            <navigator url="/pages/helpeach/helpeach">
+                <view class="his_name">互助信息</view>
+            </navigator>
+            <navigator url="/pages/sentgoods/sentgoods">
+                <view class="his_name">发布商品</view>
+            </navigator>
+            <navigator url="/pages/sentOrder/sentorder">
+                <view class="his_name">发布求助</view>
+            </navigator>
+        </view>
+        <!-- 联系地址管理 -->
+        <view class="address_wrap">
+          <navigator url="/pages/usermessage/usermessage" class="iconfont icon-gerenxinxi-copy">个人信息</navigator>
+        </view>
+        <!-- 社区窗口登录 -->
+        <view class="shequ_wrap">
+            <navigator url="/pages/shequlogin/shequlogin" class="iconfont icon-denglu">窗口登录</navigator>
+        </view>
+        <!-- 应用信息相关 -->
+        <view class="app_info_wrap">
+            <view class="app_info_item app_info_contant">
+                <text class="iconfont icon-kefu">联系客服</text>
+                <text>138********</text>
+            </view>
+            <navigator class="app_info_item iconfont icon-yijianfankui" url="/pages/feedback/feedback">意见反馈</navigator>
+            <view class="app_info_item ">
+              <navigator url="/pages/ourinfo/ourinfo"class="iconfont icon-guanyuwomen">关于我们</navigator>
+            </view>
+        </view>
+    </view>
+</view>

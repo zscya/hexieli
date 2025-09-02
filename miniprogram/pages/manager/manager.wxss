@@ -1,0 +1,70 @@
+/* pages/manager/manager.wxss */
+.mainbox {
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  margin-top: 30rpx;
+  margin-bottom: 200rpx;
+}
+.mainbox .orderContainer {
+  position: relative;
+}
+.mainbox .orderContainer .toplogo {
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.mainbox .orderContainer .toplogo .placename {
+  font-size: 65rpx;
+  color: var(--themeColor);
+}
+.mainbox .orderContainer .topclassify {
+  width: 100%;
+  height: 70rpx;
+  margin-top: 120rpx;
+  margin-bottom: 20rpx;
+  background-color: #ffffff;
+  display: flex;
+}
+.mainbox .orderContainer .topclassify .tool_item {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 35rpx;
+}
+.mainbox .orderContainer .middlecard .floortitle {
+  font-size: 50rpx;
+}
+.mainbox .orderlist .orderitem {
+  border: 1rpx solid #b3a8a8;
+  margin-top: 20rpx ;
+  padding: 10rpx 20rpx;
+}
+.mainbox .orderlist .orderitem .order_name_wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.mainbox .orderlist .orderitem .order_name_wrap .order_type {
+  background-color: #999999;
+  color: #e2d9d9;
+}
+.mainbox .orderlist .orderitem .order_price_wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.mainbox .orderlist .orderitem .order_price_wrap .position_wrap {
+  margin-top: 20rpx;
+}
+.mainbox .orderlist .orderitem .order_price_wrap .position_wrap .num {
+  font-size: 30rpx;
+}
+.mainbox .orderlist .orderitem .order_price_wrap .position_wrap .plice {
+  font-size: 30rpx;
+  color: #b3a8a8;
+}
+.mainbox .orderlist .orderitem .order_price_wrap .price {
+  font-size: 45rpx;
+  color: var(--themeColor);
+}

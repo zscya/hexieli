@@ -1,0 +1,112 @@
+<!--pages/helpeach/helpeach.wxml-->
+<!-- 监听自定义事件 -->
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+    <block wx:if="{{tabs[0].isActive}}">
+        <view class="first_tab">
+            <view wx:for="{{nofinish}}" wx:key="id" wx:for-index="index1" wx:for-item="item1">
+                <view class="goods_list">
+                    <view class="goods_item" bindtap="moreDetail" data-id="{{item1._id}}">
+                        <!-- 左侧的图片容器结构 -->
+                        <view class="goods_img_wrap">
+                            <image src="{{item1.images[0]?item1.images[0]:'../../static/images/use/nopng.png'}}"></image>
+                        </view>
+                        <!-- 右侧 商品容器 -->
+                        <view class="goods_info_wrap">
+                            <view class="goods_name">{{item1.things_name}}</view>
+                            <view class="goods_position">
+                                地点：{{item1.Place}}
+                            </view>
+                            <view class="goods_price_wrap">
+                                <view class="goods_price iconfont icon-flower">
+                                    {{item1.bloom}}
+                                </view>
+                                <view class="goods_yuding">
+                                    待完成
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:elif="{{tabs[1].isActive}}">
+        <view class="first_tab">
+            <view wx:for="{{finished}}" wx:key="id" wx:for-index="index1" wx:for-item="item1">
+                <view class="goods_list">
+                    <view class="goods_item" data-id="{{item1._id}}">
+                        <!-- 左侧的图片容器结构 -->
+                        <view class="goods_img_wrap">
+                            <image src="{{item1.images[0]?item1.images[0]:'../../static/images/use/nopng.png'}}"></image>
+                        </view>
+                        <!-- 右侧 商品容器 -->
+                        <view class="goods_info_wrap">
+                            <view class="goods_name">{{item1.things_name}}</view>
+                            <view class="goods_position">
+                                地点：{{item1.Place}}
+                            </view>
+                            <view class="goods_price_wrap">
+                                <view class="goods_price iconfont icon-flower">
+                                    {{item1.bloom}}
+                                </view>
+                                <view class="goods_yuding">
+                                    已完成
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:elif="{{tabs[2].isActive}}">
+        <view class="first_tab">
+            <view wx:for="{{Myhelp}}" wx:key="id" wx:for-index="index1" wx:for-item="item1">
+                <view class="goods_list">
+                    <view class="goods_item" data-id="{{item1._id}}">
+                        <!-- 左侧的图片容器结构 -->
+                        <view class="goods_img_wrap">
+                            <image src="{{item1.images[0]?item1.images[0]:'../../static/images/use/nopng.png'}}"></image>
+                        </view>
+                        <!-- 右侧 商品容器 -->
+                        <view class="goods_info_wrap">
+                            <view class="goods_name_wrap">
+                                <view class="goods_name">{{item1.things_name}}</view>
+                                <block wx:if="{{item1.type==1}}">
+                                    <view class="goods_type">待完成</view>
+                                </block>
+                                <block wx:if="{{item1.type==2}}">
+                                    <view class="goods_type">已完成</view>
+                                </block>
+                                <block wx:if="{{item1.type==0}}">
+                                    <view class="goods_type">未得到帮助</view>
+                                </block>
+                            </view>
+                            <view class="goods_position">
+                                地点：{{item1.Place}}
+                            </view>
+                            <view class="goods_price_wrap">
+                                <view class="goods_price iconfont icon-flower">
+                                    {{item1.bloom}}
+                                </view>
+                                <block wx:if="{{item1.type==1||item1.type==0}}">
+                                    <view class="goods_wancheng" data-id="{{item1._id}}" data-type="{{item1.type}}" bindtap="finishhelp">
+                                        已完成
+                                    </view>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view style="z-index: 30;" class="publish_help_wrap">
+            <view class="publish_help_main" bindtap="tosentOrder">
+                <view>
+                    +
+                </view>
+
+            </view>
+        </view>
+    </block>
+</Tabs>

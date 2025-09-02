@@ -1,0 +1,6 @@
+<!--pages/moreinfo/moreinfo.wxml-->
+<view class="floor_list" wx:for="{{gonggao_list}}" wx:key="_id" wx:for-item="item">
+    <view class="floor_list_info">
+        {{item.gonggao_title}}
+    </view>
+</view>

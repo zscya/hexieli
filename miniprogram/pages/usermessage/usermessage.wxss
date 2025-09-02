@@ -1,0 +1,110 @@
+/* pages/usermessage/usermessage.wxss */
+/* pages/sentgoods/sentgoods.wxss */
+.container {
+  height: 100%;
+  width: 100%;
+  justify-content: initial;
+}
+.container .form-box {
+  width: 100%;
+  background-color: #ffffff;
+  margin-top: 20rpx;
+}
+.container .form-box .row-wrap {
+  display: flex;
+  width: 720rpx;
+  font-size: 28rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin-left: 30rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.container .form-box .row-wrap .label {
+  width: 160rpx;
+}
+.container .form-box .row-wrap .label-right {
+  flex: 1;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+.container .form-box .row-wrap .label-right input {
+  height: 100%;
+  font-size: 28rpx;
+  padding-right: 30rpx;
+}
+.container .form-box .row-wrap .right-box {
+  margin-right: 30rpx;
+}
+.container .fb_content {
+  background-color: #ffffff;
+  margin-top: 20rpx;
+}
+.container .fb_content textarea {
+  padding: 10rpx;
+}
+.container .fb_content .fb_tool {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container .fb_content .fb_tool button {
+  margin: 0;
+  width: 90rpx;
+  height: 90rpx;
+  font-size: 60rpx;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+  color: #cccccc;
+  background-color: #eeeeee;
+}
+.container .fb_content .fb_tool .up_img_item {
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+}
+.container .fb_content .fb_tool .up_img_item .up_img_wrap {
+  width: 90rpx;
+  height: 90rpx;
+  position: relative;
+}
+.container .fb_content .fb_tool .up_img_item .up_img_wrap image {
+  width: 100%;
+  height: 100%;
+  border-radius: 15rpx;
+}
+.container .fb_content .fb_tool .up_img_item .up_img_wrap icon {
+  position: absolute;
+  top: -22rpx;
+  right: -22rpx;
+}
+.container .addr-details {
+  height: auto;
+  padding: 30rpx 0;
+  margin-left: 30rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+  display: flex;
+  font-size: 28rpx;
+}
+.container .addr-details .label {
+  margin: auto 0 auto 0;
+  width: 160rpx;
+  color: #000;
+}
+.container .addr-details textarea {
+  box-sizing: border-box;
+  width: 480rpx;
+  overflow: scroll;
+}
+.container .text {
+  margin-left: 20rpx;
+}
+.container .text .title {
+  font-size: 28rpx;
+}
+.btn {
+  margin-top: 100rpx;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+}

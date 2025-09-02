@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+  },
+  "navigationBarTitleText": "和谐里",
+  "enablePullDownRefresh": true
+}

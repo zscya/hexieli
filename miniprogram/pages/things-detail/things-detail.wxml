@@ -1,0 +1,57 @@
+<!--pages/goods-detail/goods-detail.wxml-->
+<view class="detail_swiper">
+    <swiper autoplay="true" circular="true" indicator-dots="true">
+        <swiper-item bindtap="handlePrevewImage" wx:for="{{things_info.images}}" wx:key="pics_id">
+            <image src="{{item}}"></image>
+        </swiper-item>
+    </swiper>
+</view>
+
+
+<view class="goods_name_row">
+    <view class="goods_name">{{things_info.things_name}}</view>
+    <view class="goods_price iconfont icon-flower">{{things_info.bloom}}</view>
+</view>
+<view class="goods_info place">
+    <view class="goods_info_title">地点</view>
+    <view class="goods_info_content">
+        <text>{{things_info.Place}}</text>
+    </view>
+</view>
+<view class="goods_info">
+    <view class="goods_info_title">详情描述</view>
+    <view class="goods_info_content">
+        <!-- 富文本 -->
+        <rich-text nodes="{{things_info.things_description}}"></rich-text>
+    </view>
+</view>
+<view class="btm_tool">
+    <view class="tool_item">
+        <view class="iconfont icon-kefu"></view>
+        <view>联系客服</view>
+        <button open-type="contact"></button>
+    </view>
+    <view class="tool_item">
+        <view class="iconfont icon-fenxiang"></view>
+        <view>分享</view>
+        <button open-type="share"></button>
+    </view>
+    <block wx:if="{{things_info.type==0}}">
+        <view class="tool_item" bindtap="help">
+            <view class="iconfont icon-bangzhu" bindtap="changetype"></view>
+            <view>进行帮助</view>
+            <!-- <view wx:else="{{things_info.type==1}}">帮助中</view> -->
+            <button></button>
+        </view>
+    </block>
+    <block wx:else="{{things_info.type==1}}">
+        <view class="tool_item">
+            <view class="iconfont icon-bangzhu"></view>
+            <view>帮助中</view>
+            <button></button>
+        </view>
+    </block>
+    <view class="tool_item btn_buy" bindtap="toComunication">
+        电话联系
+    </view>
+</view>
