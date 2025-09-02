@@ -1,0 +1,36 @@
+<!--pages/news_detail/news_detail.wxml-->
+<view class="detail_swiper">
+    <swiper autoplay="true" circular="true" indicator-dots="true">
+        <swiper-item bindtap="handlePrevewImage" wx:for="{{things_info.images}}" wx:key="pics_id">
+            <image src="{{item}}"></image>
+        </swiper-item>
+    </swiper>
+</view>
+<view class="goods_name_row">
+    <view class="goods_name"></view>
+    <view class="goods_price iconfont icon-shoucang" style="font-size: 50rpx;" bindtap="toShoucang"></view>
+</view>
+<view class="goods_name_row">
+    <view class="goods_title">新闻标题:{{news_info[0].new_title}}</view>
+</view>
+<view class="goods_info place">
+    <view class="goods_info_title">分类:{{news_info[0].new_type}}</view>
+</view>
+<view class="goods_info">
+    <view class="goods_info_title">发布日期:{{news_info[0].time}}</view>
+</view>
+<view class="goods_info place goods_name_row">
+    <view class="goods_name">点赞数:{{news_info[0].new_dianzan}}</view>
+    <view class="news_dianzan iconfont icon-dianzan" style="font-size: 50rpx;" data-new_shoucang="{{news_info[0].new_shoucang}}">
+      <view bindtap="toShoucang">
+        
+      </view>
+    </view>
+</view>
+<view class="goods_info">
+    <view class="goods_info_title">新闻内容</view>
+    <view class="goods_info_content">
+        <!-- 富文本 -->
+        <rich-text nodes="{{news_info[0].new_description}}"></rich-text>
+    </view>
+</view>

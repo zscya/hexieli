@@ -1,0 +1,46 @@
+<!--pages/sort/sort.wxml-->
+<!-- 搜索框 -->
+<view class="search-box">
+  <input class="search-input" placeholder="请输入搜索内容" bindinput="onInput" />
+  <button class="search-btn" bindtap="onSearch">搜索</button>
+</view>
+  <!-- 导航区域 -->
+<scroll-view
+      scroll-x
+      class="navScroll"
+      enable-flex
+      scroll-into-view="{{'scroll' + navId}}"
+      scroll-with-animation="true"
+>
+    <view id="{{'scroll' + item.id}}" class="navItem" wx:for="{{navs}}" wx:key="id">
+      <view class="navContent {{navId === item.id?'active': ''}}" bindtap="changeNav" id="{{item.id}}" data-id="{{item.id}}" data-type="{{item.text}}">
+        {{item.text}}
+      </view>
+    </view>
+</scroll-view>
+<!-- 主要新闻 -->
+<view class="first_tab">
+  <view wx:for="{{maintext}}" wx:key="id" wx:for-index="index1" wx:for-item="item1">
+    <view class="news_list">
+      <view class="news_item" bindtap="moreDetail" data-new_title="{{item1.new_title}}">
+        <!-- 左侧的图片容器结构 -->
+          <view class="news_img_wrap">
+            <image src="{{item1.images[0]?item1.images[0]:'../../static/images/use/nopng.png'}}"></image>
+          </view>
+        <!-- 右侧新闻容器 -->
+          <view class="news_info_wrap">
+            <view class="news_title">{{item1.new_title}}</view>
+              <view class="news_time_wrap">
+                <view class="news_writer">
+                  {{item1.new_writer}}
+                </view>
+                <!-- 发布时间 -->
+                <view class="news_time">
+                  {{item1.time}}
+                </view>
+              </view>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>
